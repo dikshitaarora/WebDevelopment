@@ -34,21 +34,10 @@ function changeMarker(){
     this.textContent = 'O' ;
   }
   playerX = !playerX ;
-  //  this.textContent = prompt("Enter X or O : ") ;
-    // if(this.textContent === ''){
-    //   this.textContent = 'X';
-    //   // console.log(marker)
-    // }else if (this.textContent === 'X') {
-    //   this.textContent = 'O';
-    // }else {
-    //   this.textContent = '';
-    // }
-    checkWinner() ;
+  setTimeout(checkWinner, 2000);
+//  checkWinner() ;
 };
 
-function enterValue(){
-
-}
 // Use a for loop to add Event listeners to all the squares
 for (var i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', changeMarker);
@@ -75,7 +64,8 @@ function checkWinner(){
     }
   }
   if(player_won){
-    console.log("Congratulations! Player "+a+" has won! Please press 'Restart' to play again. ") ;
+    window.alert("Congratulations! Player "+a+" has won!") ;
+    clearBoard() ;
   }
 
 }
